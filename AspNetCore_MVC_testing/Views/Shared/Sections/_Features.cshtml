@@ -1,0 +1,27 @@
+﻿@model FeaturesViewModel;
+
+
+
+<section id="@Model.Id" class="features">
+    <div class="container">
+        <h2>@Model.Title</h2>
+        <p class="p-width">@Model.Description</p>
+        <div class="feature-boxes">
+
+            @if(Model.FeaturesBoxes != null)
+            {
+                foreach(var box in Model.FeaturesBoxes)
+                {
+                    <a class="@box.ClassNames[0]" asp-controller="@box.Link.ControllerName" asp-action="@box.Link.ActionName">
+                        <div class="@box.ClassNames[1] @box.ClassNames[2]">
+                            <img src="@box.Image.ImageUrl">
+                            <h5>@box.Topic</h5>
+                            <p>@box.Text</p>
+                        </div>
+                    </a>
+                }
+            }
+
+        </div>
+    </div>
+</section>
