@@ -16,27 +16,20 @@
         }
 
         form {
+            padding: 1rem;
 
             .content {
                 display: grid;
                 gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
 
 
 
 
                 @include md {
                     grid-template-columns: 1fr 1fr;
-                    grid-template-areas: "firstname lastname"
-                                         "email email"
-                                         "password password"
-                                         "confirm confirm"
-                                         "terms terms"
-                                         "button button"
-
-
-
-
-
+                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button"
                 }
 
                 #form-firstname {
