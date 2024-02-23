@@ -5,15 +5,13 @@ namespace AspNetCore_MVC_testing.Controllers
 {
     public class AuthController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [Route("/signin")]
-        public IActionResult SignIn()
-        {
-            return View();
-        }
+       
+
+        //[Route("/signin")]
+        //public IActionResult SignIn()
+        //{
+        //    return View();
+        //}
 
         [Route("/signup")]
         [HttpGet]
@@ -27,7 +25,7 @@ namespace AspNetCore_MVC_testing.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return View(viewModel);
 
             return RedirectToAction("SignIn", "Auth");

@@ -361,6 +361,24 @@ a:hover {
   color: #FFFFFF;
 }
 
+form {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+form .input-group {
+  display: grid;
+}
+form .input-group label {
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+form .input-group input {
+  padding: 1rem;
+  border-radius: 8px !important;
+  border: 1px solid #565973;
+}
+
 header {
   padding: 15px 0;
 }

@@ -39,11 +39,12 @@
                 </div>
                 <div id="form-terms" class="checkbox-group">
                     <input asp-for="Form.TermsAndConditions" />
-                    <label asp-for="Form.TermsAndConditions">I agree to the <a asp-controller="About" asp-action="Terms" >Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
+                    <label asp-for="Form.TermsAndConditions">I agree to the <a asp-controller="About" asp-action="Terms">Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
                     <span asp-validation-for="Form.TermsAndConditions"></span>
                 </div>
-                <button class=btn-theme-s" type="submit">@Model.Title</button>
+                <button class="btn-theme-s" type="submit" >@Model.Title</button>
             </div>
         </form>
+
     </div>
 </section>
