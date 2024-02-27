@@ -5,13 +5,16 @@ namespace AspNetCore_MVC_testing.Models;
 
 public class SignUpModel
 {
+    [DataType(DataType.Text)]
     [Display(Name = "First name", Prompt = "Enter your first name", Order = 0)]
     [Required(ErrorMessage = "First name is required")]
+    [MinLength(2, ErrorMessage = "First name is required")]
     public string FirstName { get; set; } = null!;
 
-
+    [DataType(DataType.Text)]
     [Display(Name = "Last name", Prompt = "Enter your Last name", Order = 1)]
     [Required(ErrorMessage = "Last name is required")]
+    [MinLength(2, ErrorMessage = "First name is required")]
     public string LastName { get; set; } = null!;
 
 

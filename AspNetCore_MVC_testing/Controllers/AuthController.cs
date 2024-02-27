@@ -25,7 +25,7 @@ namespace AspNetCore_MVC_testing.Controllers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            return RedirectToAction("SignIn", "Auth");
+            return RedirectToAction("Index", "Home");
         }
 
         //sign in
@@ -60,9 +60,9 @@ namespace AspNetCore_MVC_testing.Controllers
 
 
 
-        public IActionResult SignOut()
-        {
-            return View();
-        }
+        //public IActionResult SignOut()
+        //{
+        //    return View();
+        //}
     }
 }
