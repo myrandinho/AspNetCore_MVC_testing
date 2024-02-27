@@ -1,8 +1,16 @@
+using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
+
+
+
+var app = builder.Build();
 app.UseHsts();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
