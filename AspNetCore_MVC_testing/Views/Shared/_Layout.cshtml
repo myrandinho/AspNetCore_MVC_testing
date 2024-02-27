@@ -28,8 +28,8 @@
 
                 <div class="menu">
                     <nav>
-                        <a class="menu-link" asp-controller="Overview" asp-action="Index">Overview</a>
-                        <a class="menu-link" asp-controller="Features" asp-action="Index">Features</a>
+                        <a class="menu-link" href="#overview">Overview</a>
+                        <a class="menu-link" href="#features">Features</a>
                         <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
                     </nav>
                 </div>
@@ -55,7 +55,7 @@
         </main>
         <footer>
             <div class="container">
-                <div class="social-media">
+                <div class="@((ViewContext.RouteData.Values["Controller"]!.ToString() == "Auth") ? "d-none" : "social-media")">
                     <a class="btn-social" href="#"><i class="fa-brands fa-square-facebook"></i></a>
                     <a class="btn-social" href="#"><i class="fa-brands fa-twitter"></i></a>
                     <a class="btn-social" href="#"><i class="fa-brands fa-square-instagram"></i></a>

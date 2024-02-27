@@ -1,11 +1,4 @@
-﻿/*namespace AspNetCore_MVC_testing.wwwroot.css
-{
-    public class site
-    {
-    }
-}
-*/
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 html, body {
   line-height: 160%;
   font-weight: 400;
@@ -227,6 +220,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   background: #6366F1;
   color: #FFFFFF;
   border: none;
@@ -246,6 +240,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   box-shadow: 0px 8px 18px -8px rgba(99, 102, 241, 0.9);
   background: #6366F1;
   color: #FFFFFF;
@@ -268,6 +263,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   background: #EFF2FC;
   color: #33354D;
   border: none;
@@ -354,6 +350,7 @@ a:hover {
   height: 44px;
   background-color: #EFF2FC;
   color: #33354D;
+  text-decoration: none;
 }
 .btn-social:hover {
   text-decoration: none;
@@ -366,11 +363,25 @@ form {
   display: grid;
   gap: 1rem;
 }
+form .checkbox span {
+  display: block;
+}
+form .checkbox span.field-validation-error {
+  /*                position: absolute;
+                  top: 0;
+                  right: 0;*/
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
 form .input-group {
   margin: 1rem 0;
   display: grid;
 }
-form span.field-validation-error {
+form .input-group span.field-validation-error {
   position: absolute;
   top: 0;
   right: 0;
@@ -551,6 +562,7 @@ footer .container .social-media {
 }
 .features .container .feature-boxes .link-box {
   color: black;
+  text-decoration: none;
 }
 .features .container .feature-boxes .link-box:hover {
   text-decoration: none;
@@ -561,6 +573,10 @@ footer .container .social-media {
 }
 .features .container .feature-boxes .link-box .f-box h2 {
   color: black;
+  text-decoration: none;
+}
+.features .container .feature-boxes .link-box .f-box p {
+  text-decoration: none;
 }
 .features .container .feature-boxes .link-box .f-box img {
   margin-bottom: 10px;
@@ -660,11 +676,21 @@ footer .container .social-media {
   }
 }
 #signup .container form {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+#signup .container form h1 {
+  font-weight: 800;
+}
+#signup .container form p {
+  color: #565973;
+  margin: 0;
+}
+#signup .container form p a {
+  color: #6366F1;
 }
 #signup .container form .content {
   display: grid;
-  gap: 1rem 2rem;
+  gap: 0rem 2rem;
   grid-template-columns: 1fr;
   grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
 }
@@ -691,7 +717,51 @@ footer .container .social-media {
 }
 #signup .container form .content #form-terms {
   grid-area: terms;
+  padding: 1rem 0;
 }
-#signup .container form .content #form-button {
+#signup .container form .content #form-terms a {
+  color: #6366F1;
+}
+#signup .container form .content #form-submit {
   grid-area: button;
+}
+
+#signin {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signin .container {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  #signin .container {
+    width: 30%;
+  }
+}
+#signin .container form h1 {
+  font-weight: 800;
+}
+#signin .container form p {
+  color: #565973;
+  margin: 0;
+}
+#signin .container form p a {
+  color: #6366F1;
+}
+#signin .container form .content .btn-and-forgot-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#signin .container form .content .btn-and-forgot-area #form-submit {
+  width: 100%;
+}
+#signin .container form .content .btn-and-forgot-area #form-forgot-password {
+  display: inline-block;
+  color: #6366F1;
+  font-weight: 600;
+  text-decoration: none;
 }

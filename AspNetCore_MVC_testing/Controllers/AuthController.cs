@@ -7,11 +7,8 @@ namespace AspNetCore_MVC_testing.Controllers
     {
        
 
-        //[Route("/signin")]
-        //public IActionResult SignIn()
-        //{
-        //    return View();
-        //}
+
+        //signup
 
         [Route("/signup")]
         [HttpGet]
@@ -30,6 +27,38 @@ namespace AspNetCore_MVC_testing.Controllers
 
             return RedirectToAction("SignIn", "Auth");
         }
+
+        //sign in
+
+        [Route("/signin")]
+        [HttpGet]
+        public IActionResult SignIn()
+        {
+            var viewModel = new SignInViewModel();
+            return View(viewModel);
+        }
+
+        [Route("/signin")]
+        [HttpPost]
+        public IActionResult SignIn(SignInViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            viewModel.ErrorMessage = "Incorrect email or password";
+            return View(viewModel);
+        }
+
+
+
+
+
+
+
+
+
 
         public IActionResult SignOut()
         {

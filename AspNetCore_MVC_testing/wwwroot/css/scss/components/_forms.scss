@@ -3,12 +3,25 @@ form {
     display: grid;
     gap: 1rem;
 
+    .checkbox {
+        span {
+            display: block;
+
+            &.field-validation-error {
+/*                position: absolute;
+                top: 0;
+                right: 0;*/
+                @include text-s;
+                color: $danger;
+            }
+        }
+    }
+
     .input-group {
         margin: 1rem 0;
         display: grid;
 
         span {
-
 
             &.field-validation-error {
                 position: absolute;
