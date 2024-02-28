@@ -44,16 +44,13 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adresses", (string)null);
+                    b.ToTable("Adresses");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.UserEntity", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("AdressId")
                         .HasColumnType("int");
@@ -79,6 +76,10 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
@@ -90,7 +91,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("AdressId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.UserEntity", b =>

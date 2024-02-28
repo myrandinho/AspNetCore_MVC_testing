@@ -23,13 +23,12 @@ namespace AspNetCore_MVC_testing.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
         {
-            if (!ModelState.IsValid)
-                return View(viewModel);
-
-            var result = await _userService.CreateUserAsync(viewModel.Form);
-            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
-                return RedirectToAction("SignIn", "Auth");
-
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.CreateUserAsync(viewModel.Form);
+                if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                    return RedirectToAction("SignIn", "Auth");
+            }
 
             return View(viewModel);
         }

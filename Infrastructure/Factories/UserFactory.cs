@@ -14,7 +14,8 @@ public class UserFactory
         {
             var date = DateTime.Now;
 
-            return new UserEntity() {
+            return new UserEntity() 
+            {
                 Id = Guid.NewGuid().ToString(),
                 Created = date,
                 Modified = date,
@@ -22,8 +23,12 @@ public class UserFactory
             };
 
         }
-        catch { }
-        return null!;
+        catch (Exception ex)
+        {
+            Console.WriteLine($"::::Error creating user: {ex.Message}::::");
+            return null!;
+        }
+        
     }
 
     public static UserEntity Create(SignUpModel model)
@@ -40,14 +45,17 @@ public class UserFactory
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                Password = model.Password,
+                Password = password,
                 SecurityKey = securityKey,
                 Created = date,
                 Modified = date
             };
 
         }
-        catch { }
-        return null!;
+        catch (Exception ex)
+        {
+            Console.WriteLine($"::::Error creating user: {ex.Message}::::");
+            return null!;
+        }
     }
 }
