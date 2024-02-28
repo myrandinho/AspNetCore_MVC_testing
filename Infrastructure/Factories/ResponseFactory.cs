@@ -12,7 +12,7 @@ public class ResponseFactory
         {
             
             Message = "Succeeded",
-            SatusCode = StatusCode.OK
+            StatusCode = StatusCode.OK
         };
     }
 
@@ -21,7 +21,7 @@ public class ResponseFactory
         return new ResponsResult
         { 
             Message = message ?? "Succeeded",
-            SatusCode = StatusCode.OK
+            StatusCode = StatusCode.OK
         };
     }
 
@@ -31,7 +31,7 @@ public class ResponseFactory
         {
             ContentResult = obj,
             Message = message ?? "Succeeded",
-            SatusCode = StatusCode.OK
+            StatusCode = StatusCode.OK
         };
     }
 
@@ -44,7 +44,7 @@ public class ResponseFactory
         {
 
             Message = message ?? "Failed", 
-            SatusCode = StatusCode.ERROR
+            StatusCode = StatusCode.ERROR
         };
     }
 
@@ -55,7 +55,7 @@ public class ResponseFactory
         {
 
             Message = message ?? "Already exists",
-            SatusCode = StatusCode.EXISTS
+            StatusCode = StatusCode.EXISTS
         };
     }
 
@@ -67,7 +67,7 @@ public class ResponseFactory
         {
 
             Message = message ?? "Not found",
-            SatusCode = StatusCode.NOT_FOUND
+            StatusCode = StatusCode.NOT_FOUND
         };
     }
 }

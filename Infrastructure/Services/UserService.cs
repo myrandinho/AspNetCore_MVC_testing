@@ -17,11 +17,16 @@ public class UserService(UserRepository userRepository, AdressService adressServ
     {
         try
         {
-            var result = await _userRepository.AlreadyExistsAsync(x => x.Email == model.Email);
-            if (result.SatusCode != StatusCode.EXISTS)
-            {
-                result = await _userRepository.CreateOneAsync();
-            }
+            var exists = await _userRepository.AlreadyExistsAsync(x => x.Email == model.Email);
+            if (exists.StatusCode == StatusCode.EXISTS)
+                return exists;
+
+            var result = await _userRepository.CreateOneAsync(UserFactory.Create(model));
+            if (result.StatusCode != StatusCode.OK)
+                return result;
+
+
+            return ResponseFactory.Ok("User was created successfully.");
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }

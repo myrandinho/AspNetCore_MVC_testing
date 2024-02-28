@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore_MVC_testing.Helpers;
+namespace Infrastructure.Helpers;
 
 public class CheckBoxRequired : ValidationAttribute
 {

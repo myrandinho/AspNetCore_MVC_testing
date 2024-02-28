@@ -12,7 +12,7 @@ public enum StatusCode
 
 public class ResponsResult
 {
-    public StatusCode SatusCode { get; set; }
+    public StatusCode StatusCode { get; set; }
     public object? ContentResult { get; set; }
     public string? Message { get; set; }
 }

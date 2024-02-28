@@ -1,5 +1,6 @@
 ﻿
 
+using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Models;
@@ -41,8 +42,7 @@ public class SignUpModel
     public string ConfirmPassword { get; set; } = null!;
 
 
-    [Display(Name = "I agree to the Terms & Conditions", Order = 5)]
-    [Required(ErrorMessage = "You must accept the terms and conditions.")]
-    [CheckBoxRequired(ErrorMessage = "You must accept the terms and conditions.")]
+    [Display(Name = "I agree to the Terms & Condotions.")]
+    [CheckBoxRequired(ErrorMessage = "You must accept the terms and conditions to proceed.")]
     public bool TermsAndConditions { get; set; } = false;
 }

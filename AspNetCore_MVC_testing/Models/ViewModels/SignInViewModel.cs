@@ -1,4 +1,6 @@
-﻿namespace AspNetCore_MVC_testing.Models.ViewModels;
+﻿
+
+using Infrastructure.Models;
 
 public class SignInViewModel
 {
