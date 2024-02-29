@@ -14,12 +14,12 @@ public class UserFactory
         {
             var date = DateTime.Now;
 
-            return new UserEntity() 
+            return new UserEntity()
             {
                 Id = Guid.NewGuid().ToString(),
                 Created = date,
                 Modified = date,
-            
+
             };
 
         }
@@ -28,7 +28,7 @@ public class UserFactory
             Console.WriteLine($"::::Error creating user: {ex.Message}::::");
             return null!;
         }
-        
+
     }
 
     public static UserEntity Create(SignUpModel model)

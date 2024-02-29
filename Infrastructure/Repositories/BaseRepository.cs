@@ -9,9 +9,14 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 
-public abstract class BaseRepository<TEntity>(DataContext context) where TEntity : class
+public abstract class BaseRepository<TEntity> where TEntity : class
 {
-    private readonly DataContext _context = context;
+    private readonly DataContext _context;
+
+    protected BaseRepository(DataContext context)
+    {
+        _context = context;
+    }
 
 
     public virtual async Task<ResponsResult> CreateOneAsync(TEntity entity)

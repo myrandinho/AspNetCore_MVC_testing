@@ -13,11 +13,12 @@ namespace AspNetCore_MVC_testing.Controllers
 
         [Route("/signup")]
         [HttpGet]
-        public IActionResult SignUp()
-        {
-            var viewModel = new SignUpViewModel();
-            return View(viewModel);
-        }
+        public IActionResult SignUp() => View(new SignUpViewModel());
+        //public IActionResult SignUp()
+        //{
+        //    var viewModel = new SignUpViewModel();
+        //    return View(viewModel);
+        //}
 
         [Route("/signup")]
         [HttpPost]
@@ -57,7 +58,23 @@ namespace AspNetCore_MVC_testing.Controllers
         }
 
 
+        //[HttpGet]
+        //[Route("/signin")]
+        //public IActionResult SignIn() => View(new SignInViewModel());
+        //[HttpPost]
+        //[Route("/signin")]
+        //public async Task<IActionResult> SignIn(SignInViewModel viewModel)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        var result = await _userService.SignInUserAsync(viewModel.Form);
+        //        if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+        //            return RedirectToAction("Details", "Account");
+        //    }
 
+        //    viewModel.ErrorMessage = "Incorrect email or password";
+        //    return View(viewModel);
+        //}
 
 
 

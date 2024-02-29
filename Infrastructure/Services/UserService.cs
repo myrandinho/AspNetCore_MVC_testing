@@ -22,7 +22,7 @@ public class UserService(UserRepository userRepository, AdressService adressServ
                 return exists;
 
             var result = await _userRepository.CreateOneAsync(UserFactory.Create(model));
-            if (result.StatusCode != StatusCode.OK)
+            if (result.StatusCode != StatusCode.OK) 
                 return result;
 
 
