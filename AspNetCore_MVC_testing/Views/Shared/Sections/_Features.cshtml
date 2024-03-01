@@ -1,27 +1,30 @@
-﻿@model FeaturesViewModel;
+﻿
+@inject FeatureService _featureService
+@{
+    var result = await _featureService.GetAllFeaturesAsync();
+    List<FeatureEntity> content = (List<FeatureEntity>)result.ContentResult!;
+    var feature = content.First();
+}
 
 
 
-<section id="@Model.Id" class="features">
+@if(content != null) {
+<section class="features">
     <div class="container">
-        <h2>@Model.Title</h2>
-        <p class="p-width">@Model.Description</p>
+        <h2>@feature.Title</h2>
+        <p class="p-width">@feature.Ingress</p>
         <div class="feature-boxes">
-
-            @if(Model.FeaturesBoxes != null)
+            @foreach (var item in feature.FeatureItems)
             {
-                foreach(var box in Model.FeaturesBoxes)
-                {
-                    <a class="@box.ClassNames[0]" asp-controller="@box.Link.ControllerName" asp-action="@box.Link.ActionName">
-                        <div class="@box.ClassNames[1] @box.ClassNames[2]">
-                            <img src="@box.Image.ImageUrl">
-                            <h5>@box.Topic</h5>
-                            <p>@box.Text</p>
-                        </div>
-                    </a>
-                }
+                <a class="link-box" href="#">
+                    <div class="f-box-1 f-box">
+                        <img src="@item.ImageUrl" alt="@item.Title">
+                        <h5>@item.Title</h5>
+                        <p>@item.Text</p>
+                    </div>
+                </a>
             }
-
         </div>
     </div>
 </section>
+}

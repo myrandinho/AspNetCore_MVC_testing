@@ -47,6 +47,57 @@ namespace Infrastructure.Migrations
                     b.ToTable("Adresses");
                 });
 
+            modelBuilder.Entity("Infrastructure.Entities.FeatureEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Ingress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Features");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.FeatureItemEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FeatureId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FeatureId");
+
+                    b.ToTable("FeaturesItems");
+                });
+
             modelBuilder.Entity("Infrastructure.Entities.UserEntity", b =>
                 {
                     b.Property<string>("Id")
@@ -92,6 +143,17 @@ namespace Infrastructure.Migrations
                     b.HasIndex("AdressId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.FeatureItemEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.FeatureEntity", "Feature")
+                        .WithMany()
+                        .HasForeignKey("FeatureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Feature");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.UserEntity", b =>

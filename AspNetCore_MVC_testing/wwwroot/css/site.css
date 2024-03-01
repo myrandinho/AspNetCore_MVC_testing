@@ -544,116 +544,158 @@ footer .container .social-media {
 }
 
 .features {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  background-color: #F3F6FF;
 }
 .features .container {
   text-align: center;
 }
+.features .container h2 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 32px !important;
+}
+@media (min-width: 992px) {
+  .features .container h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 40px !important;
+  }
+}
 .features .container .p-width {
-  padding-left: 360px;
-  padding-right: 360px;
-  margin-bottom: 50px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: #9397AD;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px !important;
+}
+@media (min-width: 1200px) {
+  .features .container .p-width {
+    padding-left: 22.5rem;
+    padding-right: 22.5rem;
+    margin-bottom: 3.125rem;
+  }
 }
 .features .container .feature-boxes {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
+}
+@media (min-width: 992px) {
+  .features .container .feature-boxes {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
 }
 .features .container .feature-boxes .link-box {
   color: black;
-  text-decoration: none;
 }
 .features .container .feature-boxes .link-box:hover {
   text-decoration: none;
 }
 .features .container .feature-boxes .link-box .f-box {
-  padding-right: 45px;
-  padding-left: 45px;
+  max-width: 100%;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
-.features .container .feature-boxes .link-box .f-box h2 {
-  color: black;
-  text-decoration: none;
+.features .container .feature-boxes .link-box .f-box:hover {
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .features .container .feature-boxes .link-box .f-box {
+    height: 12rem;
+  }
+}
+@media (min-width: 992px) {
+  .features .container .feature-boxes .link-box .f-box {
+    height: 16.875rem;
+  }
+}
+.features .container .feature-boxes .link-box .f-box h5 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 16px !important;
+}
+@media (min-width: 768px) {
+  .features .container .feature-boxes .link-box .f-box h5 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 20px !important;
+  }
 }
 .features .container .feature-boxes .link-box .f-box p {
-  text-decoration: none;
+  display: none;
+  color: #565973;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
 }
-.features .container .feature-boxes .link-box .f-box img {
-  margin-bottom: 10px;
+@media (min-width: 768px) {
+  .features .container .feature-boxes .link-box .f-box p {
+    display: block;
+  }
 }
-.features .container .feature-boxes .link-box .f-box-1 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
-  border-right: 0.5px solid #E2E5F1;
+@media (min-width: 992px) {
+  .features .container .feature-boxes .link-box .f-box p {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px !important;
+  }
+}
+.features .container .feature-boxes .f-box-1 {
   border-bottom: 0.5px solid #E2E5F1;
-  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.2), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+  border-right: 0.5px solid #E2E5F1;
 }
-.features .container .feature-boxes .link-box .f-box-1:hover {
-  border-radius: 18px;
-}
-.features .container .feature-boxes .link-box .f-box-2 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
+.features .container .feature-boxes .f-box-2 {
   border-bottom: 0.5px solid #E2E5F1;
   border-right: 0.5px solid #E2E5F1;
   border-left: 0.5px solid #E2E5F1;
-  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.2) 0 5px 5px -5px rgba(0, 0, 0, 0.2), 5px 0 5px -5px #E2E5F1;
 }
-.features .container .feature-boxes .link-box .f-box-2:hover {
-  border-radius: 18px;
-}
-.features .container .feature-boxes .link-box .f-box-3 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
+.features .container .feature-boxes .f-box-3 {
   border-bottom: 0.5px solid #E2E5F1;
   border-left: 0.5px solid #E2E5F1;
-  box-shadow: -5px 5px 5px -5px rgba(0, 0, 0, 0.2), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 }
-.features .container .feature-boxes .link-box .f-box-3:hover {
-  border-radius: 18px;
-}
-.features .container .feature-boxes .link-box .f-box-4 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
-  border-right: 0.5px solid #E2E5F1;
+.features .container .feature-boxes .f-box-4 {
   border-top: 0.5px solid #E2E5F1;
-  box-shadow: 5px -5px 5px -5px rgba(0, 0, 0, 0.2), 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
+  border-right: 0.5px solid #E2E5F1;
 }
-.features .container .feature-boxes .link-box .f-box-4:hover {
-  border-radius: 18px;
+.features .container .feature-boxes .f-box-5 {
+  border-top: 0.5px solid #E2E5F1;
+  border-right: 0.5px solid #E2E5F1;
+  border-left: 0.5px solid #E2E5F1;
 }
-.features .container .feature-boxes .link-box .f-box-5 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
+.features .container .feature-boxes .f-box-6 {
   border-top: 0.5px solid #E2E5F1;
   border-left: 0.5px solid #E2E5F1;
-  border-right: 0.5px solid #E2E5F1;
-  box-shadow: -5px -5px 5px -5px rgba(0, 0, 0, 0.2), 0 -5px 5px -5px rgba(0, 0, 0, 0.2), 5px -5px 5px -5px rgba(0, 0, 0, 0.2);
-}
-.features .container .feature-boxes .link-box .f-box-5:hover {
-  border-radius: 18px;
-}
-.features .container .feature-boxes .link-box .f-box-6 {
-  padding-top: 40px;
-  text-align: center;
-  height: 268px;
-  width: 432px;
-  border-top: 0.5px solid #E2E5F1;
-  border-left: 0.5px solid #E2E5F1;
-  box-shadow: -5px -5px 5px -5px rgba(0, 0, 0, 0.2);
-}
-.features .container .feature-boxes .link-box .f-box-6:hover {
-  border-radius: 18px;
 }
 
 #signup {

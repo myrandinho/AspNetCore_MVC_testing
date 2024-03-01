@@ -46,11 +46,14 @@ namespace AspNetCore_MVC_testing.Controllers
 
         [Route("/signin")]
         [HttpPost]
-        public IActionResult SignIn(SignInViewModel viewModel)
+        public async Task<IActionResult> SignIn(SignInViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(viewModel);
+                var result = await _userService.SignInUserAsync(viewModel.Form);
+                if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                    return RedirectToAction("Details", "Account");
+
             }
 
             viewModel.ErrorMessage = "Incorrect email or password";

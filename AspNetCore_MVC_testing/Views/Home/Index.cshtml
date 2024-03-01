@@ -1,11 +1,23 @@
 ﻿
-@model HomeIndexViewModel
+@inject FeatureService featureService
+
+@{
+    ViewData["Title"] = "Oveview";
+
+    await featureService.GetAllFeaturesAsync();
+}
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Sections/_Features.cshtml")
 
 
 
-    @await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml", Model.Showcase);
+
+
+@*     @await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml", Model.Showcase);
 
 
 
     @await Html.PartialAsync("~/Views/Shared/Sections/_Features.cshtml", Model.Features);
 
+ *@
